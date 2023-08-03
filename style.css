@@ -1,0 +1,255 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    list-style: none;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    text-decoration: none;
+    font-family: 'Comfortaa', cursive;
+}
+
+.img_header{
+    display: flex;
+    z-index: 3;
+}
+body{
+    width: 100vw;
+    overflow: hidden;
+    background-color: rgb(8, 0, 11);
+}
+
+.header {
+    width: 100vw;
+    height: 100px;
+
+}
+.header__body {
+    padding: 10px 50px;
+/*     margin-top: 20px;
+ */    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+}
+.header__logo {
+}
+.header__mobile {
+    display: none;
+}
+.header__label {
+    display: none;
+}
+.mobile-line {
+}
+.header__nav {
+    display: flex;
+    gap: 20px;
+    font-size: 24px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.header__nav-item {
+    text-decoration: none;
+}
+
+.header__nav-item:hover{
+    cursor: pointer;
+    color: rgb(135, 59, 200);
+}
+.header__button {
+    background-color: rgb(196, 123, 255);
+    color: aliceblue;
+    width: 100px;
+    height: 45px;
+    border-radius: 25px;
+    box-shadow: 2px 2px 20px rgb(93, 0, 207);
+    transition: 0.5s;
+}
+.header__button:hover {
+    background-color: rgb(105, 48, 140);
+    color: aliceblue;
+
+    border-radius: 20px;
+    box-shadow: 2px 2px 20px rgb(119, 48, 204);
+
+}
+
+
+
+
+.box-info {
+    border-radius: 50%;
+    background-color: #ffffff;
+    background-image: url(https://static.thenounproject.com/png/3836151-200.png);
+    background-size: contain;
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    bottom: 30px;
+    right: 70px;
+}
+/* .info_img {
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+} */
+
+.input__info[type="checkbox"]:checked ~ a .box{
+background-color: rgb(59, 0, 132);
+width: 200px;
+height: 250px;
+border-radius: 20px;
+position: fixed;
+bottom: 120px;
+right: 70px;
+animation: top_i 2s;
+display: flex;
+color: #ffffff;
+
+
+
+
+}
+.input__info[type="checkbox"]:checked ~ .label__info .box-info{
+    
+    background-image: url(https://cdn.icon-icons.com/icons2/2518/PNG/512/x_icon_150997.png);
+    
+    
+    
+    }
+
+
+.text-box{
+    padding: 15px;
+}
+.box{
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/2048px-Telegram_logo.svg.png);
+    background-size:70px;
+    background-position: 70px;
+    background-repeat: no-repeat;
+    display: none;
+}
+
+.input__info{
+    display: none;
+}
+.label__info {
+
+}
+.box-info {
+    transition: 0.3s;
+
+}
+.info_img {
+}
+
+
+
+@media (max-width:768px) {
+    .header__nav {
+        display: none;
+        gap: 20px;
+        font-size: 24px;
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+        transition: 0.5s;
+        transform: translate(-1500px);
+        transition: 0.5s;
+    }
+
+    
+    .header__button{
+        display: none;
+    }
+    .header__label{
+        position: relative;
+        display: block;
+        width: 50px;
+        height: 50px;        
+    }
+    .mobile-line{
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        height: 3px;
+        background-color: #ffffff;
+        left: 0px;
+        z-index: 2;
+    }
+    .mobile-line::after{
+        position: absolute;
+        content: "";
+        top: 15px;
+        width: 100%;
+        height: 3px;
+        background-color: #ffffff;
+        left: 0px;
+    }
+    .mobile-line::before{
+        position: absolute;
+        content: "";
+        bottom: 15px;
+        width: 100%;
+        height: 3px;
+        background-color: #ffffff;
+        left: 0px;
+    }
+    .header__mobile[type="checkbox"]:checked ~ .header__label .mobile-line{
+        transform: rotate(-45deg);
+        
+        
+    }
+    .header__mobile[type="checkbox"]:checked ~ .header__label .mobile-line::after{
+        transform: rotate(0deg);
+        top: 0px;
+    }
+    .header__mobile[type="checkbox"]:checked ~ .header__label .mobile-line::before{
+        transform: rotate(90deg);
+        top: 0px;
+    }
+
+    input[type="checkbox"]:checked ~ .header__nav{
+        font-size: 30px;
+        transition: 0.4s;
+        display: flex;
+        flex-direction: column;
+        padding-top: 150px;
+        gap: 60px;
+        transform: translate(0px);
+        transition: 0.5s;
+        position: absolute;
+        width: 100vw;
+        background-color: rgb(0, 255, 170);
+        left: 0px;
+        top: 0px;
+        height: 100vh;
+        animation: top_a 2s;
+        
+    }
+        
+    @keyframes top_a {
+        0%{
+            transform: translate(-1500px);
+        }
+        100%{
+            transform: translate(0px);
+
+        }
+    }
+}
+
+@keyframes top_i {
+    0%{
+        transform: translate(1500px);
+    }
+    100%{
+        transform: translate(0px);
+
+    }
+}
